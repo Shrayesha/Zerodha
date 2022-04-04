@@ -1,0 +1,36 @@
+package Parameterization;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.security.auth.login.Configuration;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrowserLaunch {
+
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+	
+		//read excel sheet data
+		
+		FileInputStream path = new FileInputStream("C:\\\\VELOCITY\\\\Automation\\\\API\\\\Sheet1.xlsx\\\\");
+		String username = WorkbookFactory.create(path).getSheet("Sheet1").getRow(6).getCell(1).getStringCellValue();
+		
+		
+		System.out.println(username);
+		
+		//Browser Launch
+		  System.setProperty("webdriver.chrome.driver",  "C:\\Users\\INTEL\\Downloads\\chromedriver.exe");
+			
+			WebDriver driver = new ChromeDriver();
+			
+			driver.get("https://www.facebook.com/");	
+			
+			driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(username);
+		
