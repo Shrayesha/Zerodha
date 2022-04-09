@@ -33,4 +33,5 @@ public class BrowserLaunch {
 			driver.manage().window().maximize();
 		
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(username);
+		driver.quit();
 		
