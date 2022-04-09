@@ -28,7 +28,7 @@ File f = new File ("C:\\VELOCITY\\Automation\\Screenshot\\image_8_30_24_03_22.jp
 }
 
 
-public static test01() {
+public static test() {
 
 	System.setProperty("webdriver.chrome.driver","C:\\Users\\INTEL\\Downloads\\chromedriver.exe");
 	
