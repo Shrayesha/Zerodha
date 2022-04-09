@@ -28,7 +28,7 @@ File f = new File ("C:\\VELOCITY\\Automation\\Screenshot\\image_8_30_24_03_22.jp
 }
 
 
-public static test() {
+public static test01() {
 
 	System.setProperty("webdriver.chrome.driver","C:\\Users\\INTEL\\Downloads\\chromedriver.exe");
 	
@@ -41,7 +41,7 @@ public static test() {
 File f = new File ("C:\\VELOCITY\\Automation\\Screenshot\\image_8_30_24_03_22.jpg");
 	
 	FileHandler.copy(src, f);
-	
+	driver.close();
 	driver.quit();
 }
 }
