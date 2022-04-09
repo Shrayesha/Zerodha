@@ -26,4 +26,22 @@ File f = new File ("C:\\VELOCITY\\Automation\\Screenshot\\image_8_30_24_03_22.jp
 	
 	
 }
+
+
+public static test() {
+
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\INTEL\\Downloads\\chromedriver.exe");
+	
+	 WebDriver driver = new ChromeDriver();
+	 driver.get("https://www.facebook.com/signup");		
+	 
+	 driver.manage().window().maximize();
+		
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+File f = new File ("C:\\VELOCITY\\Automation\\Screenshot\\image_8_30_24_03_22.jpg");
+	
+	FileHandler.copy(src, f);
+	
+	
+}
 }
